@@ -89,6 +89,32 @@ Here's a list of various detailed features that are provided by the `run_markdow
 - The timezone is always set to `US/Pacific` so your code runs in the same timezone regardless of where your computer currently is located
 - The script will only be allowed to run for `--timeout_seconds` before being terminated (defaults to 5 seconds)
 
+## Other syntax for exceptions
+
+> ```python-exception
+and
+> ```python-syntax-error
+
+are not compliant syntax wit h other software
+
+You  can also add these as a comment directly below the start of the code block:
+
+```python
+# exception
+assert 5 == 2, "5 is not 2"
+```
+```
+AssertionError: 5 is not 2
+```
+
+```python
+# syntax-error
+print('hello")
+```
+```
+SyntaxError: EOL while scanning string literal
+```
+
 ## TODO
 
 - Clean up the Python style
