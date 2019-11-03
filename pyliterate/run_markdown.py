@@ -356,6 +356,8 @@ def print_iter(it, path, overwrite):
         output = io.StringIO()
     try:
         for text in it:
+            text = text.replace("```python-exception","```python\n# exception")
+            text = text.replace("```python-syntax-error","```python\n# syntax-error")
             print(text, end='', file=output)
     except:
         raise
@@ -380,6 +382,8 @@ def main():
         signal.alarm(FLAGS.timeout_seconds)
 
         text = open(path, encoding='utf-8').read()
+        text = text.replace("```python\n# exception","```python-exception")
+        text = text.replace("```python\n# syntax-error","```python-syntax-error")
         it = iterate_blocks(path, text)
         try:
             print_iter(it, path, FLAGS.overwrite)
