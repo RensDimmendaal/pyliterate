@@ -241,7 +241,7 @@ def iterate_blocks(path, text):
     source_start = None
     block_suffix = ''
     pending_source = ''
-    pending_output = ''
+    pending_output = '>>>\n'
 
     # Import the __main__ module, which is this file, and run all of the
     # Markdown code as if it's part of that module. This enables modules
@@ -356,8 +356,8 @@ def print_iter(it, path, overwrite):
         output = io.StringIO()
     try:
         for text in it:
-            text = text.replace("```python-exception","```python\n# exception")
-            text = text.replace("```python-syntax-error","```python\n# syntax-error")
+            text = text.replace("```python-exception","<!--exception-->\n```python")
+            text = text.replace("```python-syntax-error","<!--syntax-error-->\n```python")
             print(text, end='', file=output)
     except:
         raise
@@ -382,8 +382,8 @@ def main():
         signal.alarm(FLAGS.timeout_seconds)
 
         text = open(path, encoding='utf-8').read()
-        text = text.replace("```python\n# exception","```python-exception")
-        text = text.replace("```python\n# syntax-error","```python-syntax-error")
+        text = text.replace("<!--exception-->\n```python","```python-exception")
+        text = text.replace("<!--syntax-error-->\n```python","```python-syntax-error")
         it = iterate_blocks(path, text)
         try:
             print_iter(it, path, FLAGS.overwrite)
