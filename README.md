@@ -1,4 +1,4 @@
-# PyLiterate
+# PyLiterate for Deckset
 
 This is the tool Brett Slatkin used to write [Effective Python](http://www.effectivepython.com). The workflow is a variation on [Donald Knuth's Literate programming](http://en.wikipedia.org/wiki/Literate_programming). The original repo can be found [here](https://github.com/bslatkin/pyliterate).
 
