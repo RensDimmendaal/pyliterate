@@ -6,8 +6,7 @@ The idea is the source code and explanatory text appear interleaved in a [Markdo
 
 # This Fork
 
-I (Rens) have forked it and made minimal changes to make it work with markdown files that are intended to be used in deckset.
-The original pyliterate had different code fences for running code, expected syntax-errors, and expected exceptions.
+I (Rens) have forked it and made minimal changes to make it work with markdown files that are intended to be used in [Deckset](https://www.deckset.com/). The original pyliterate had different code fences for running code, expected syntax-errors, and expected exceptions.
 
 ```python
 a = 5
@@ -45,3 +44,5 @@ The result is that the errors show up in your slide, as intended, without showin
 2. Activate the virtual environment:
 3. Install this package in your virtual environment: `pip install -e .`
 4. run_markdown your_file.md
+
+## Itended
