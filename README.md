@@ -8,13 +8,13 @@ The idea is the source code and explanatory text appear interleaved in a [Markdo
 
 I (Rens) have forked it and made minimal changes to make it work with markdown files that are intended to be used in [Deckset](https://www.deckset.com/). The original pyliterate had different code fences for running code, expected syntax-errors, and expected exceptions.
 
-```python
-a = 5
-```
+> ```python
+> a = 5
+> ```
 
-```python-exception
-a = 5 + "hello"
-```
+> ```python-exception
+> a = 5 + "hello"
+> ```
 
 ```python-syntax-error
 print("hello')
